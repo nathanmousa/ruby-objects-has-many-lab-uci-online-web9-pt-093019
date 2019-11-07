@@ -10,16 +10,16 @@ class Author
     Post.all.select {|post| post.author == self}
   end
   
-  def add_post(pst)
-    self.posts << pst
-    pst.author = self
+  def add_post(post)
+    self.posts << post
+    post.author = self
     
     @@post_count += 1
   end
   
   def add_post_by_title(title)
     post = Post.new(title)
-    self.posts << pst
+    self.posts << post
     post.author = self
     
     @@post_count +=1
