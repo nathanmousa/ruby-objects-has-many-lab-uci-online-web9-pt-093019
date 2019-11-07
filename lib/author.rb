@@ -4,11 +4,10 @@ class Author
   
   def initialize(name)
     @name = name
-    @posts = []
   end
   
   def posts
-    @posts
+    Post.all.select {|post| song.artist == self}
   end
   
   def add_post(pst)
